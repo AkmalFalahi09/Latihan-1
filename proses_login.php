@@ -1,14 +1,14 @@
 <?php 
     if($_POST){
-        $username=$_POST['nama_pegawai'];
+        $nama_pegawai=$_POST['nama_pegawai'];
         $password=$_POST['password'];
-        if(empty($username)){
+        if(empty($nama_pegawai)){
             echo "<script>alert('Username tidak boleh kosong');location.href='login.php';</script>";
         } elseif(empty($password)){
             echo "<script>alert('Password tidak boleh kosong');location.href='login.php';</script>";
         } else {
             include "koneksi.php";
-            $qry_login=mysqli_query($conn,"select * from pegawai where nama_pegawai = '".$username."' and nik = '".md5($password)."'");
+            $qry_login=mysqli_query($conn,"select * from pegawai where nama_pegawai = '".$nama_pegawai."' and password = '".md5($password)."'");
             if(mysqli_num_rows($qry_login)>0){
                 $dt_login=mysqli_fetch_array($qry_login);
                 session_start();

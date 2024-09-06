@@ -1,4 +1,5 @@
-<?php
+<?php 
+    include "header.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +34,7 @@
             $no++;?>
             <tr>              
             <td><?=$no?></td><td><?=$data_pegawai['nik']?></td> <td><?=$data_pegawai['nama_pegawai']?></td> <td><?=$data_pegawai['alamat']?></td><td><?=$data_pegawai['gender']?></td> <td><?=$data_pegawai['notelp']?></td> <td><?=$data_pegawai['nama_jabatan']?></td>
-            <td><a href="ubah_siswa.php?id_pegawai=<?=$data_pegawai['id_pegawai']?>" class="btn btn-success">Ubah</a> | <a href="hapus.php?id_siswa=<?=$data_siswa['id_pegawai']?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus</a></td>
+            <td><a href="ubah_pegawai.php?id_pegawai=<?=$data_pegawai['id_pegawai']?>" class="btn btn-success">Ubah</a> | <a href="hapus.php?id_pegawai=<?=$data_pegawai['id_pegawai']?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus</a></td>
             </tr>
             <?php 
             }
